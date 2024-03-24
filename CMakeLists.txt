@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(Market_Billing_System
-        main.cpp)
+        main.cpp
+        Bill.h
+        Bill.cpp)
