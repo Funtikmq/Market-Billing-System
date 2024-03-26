@@ -1,11 +1,8 @@
+#include <limits>
 #include <iostream>
-#include <fstream>
-#include <sstream>
 #include "Bill.h"
 
 using namespace std;
-
-
 
 int main(){
     Bill bill;
@@ -18,7 +15,11 @@ int main(){
         cout << "2.Print Bill"<< endl;
         cout << "3.Exit"<< endl;
         cout << "Enter Your Choice:"<<endl;
-        cin>>val;
+        while(!(cin>>val)){
+            cout<<"Invalid input. Please enter 1,2 or 3: ";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+        }
         switch (val) {
             case 1:
                 bill.addItem(bill);
