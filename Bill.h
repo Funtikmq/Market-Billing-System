@@ -7,16 +7,20 @@ using namespace std;
 class Bill {
 private:
     string item;
-    int rate,quantity;
+    double price;
+    int quantity;
 public:
-    Bill(string item,int rate,int quantity);
-    Bill(string item,int rate);
+    Bill(){};
+    Bill(string item,double price,int quantity);
     void setItem(string item);
-    void setRate(int rate);
+    void setPrice(double price);
     void setQuantity(int quantity);
     string getItem();
-    int getRate();
+    double getPrice();
     int getQuantity();
+    void printBill();
+    void addItem(Bill b);
+    void clearScreen();
 };
 
 
