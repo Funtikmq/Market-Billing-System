@@ -1,10 +1,12 @@
 #include <limits>
 #include <iostream>
 #include "Bill.h"
+#include <chrono>
 
 using namespace std;
 
 int main(){
+    auto start = chrono::steady_clock::now();
     Bill bill;
     bool exit = false;
     while(!exit){
@@ -16,20 +18,20 @@ int main(){
         cout << "3.Exit"<< endl;
         cout << "Enter Your Choice:"<<endl;
         while(!(cin>>val)){
-            cout<<"Invalid input. Please enter 1,2 or 3: ";
+            cerr<<"Invalid input. Please enter 1,2 or 3: ";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
         }
         switch (val) {
             case 1:
-                bill.addItem(bill);
+                bill.addItem(&bill);
                 break;
             case 2:
                 bill.printBill();
                 break;
             case 3: exit=true;
                 break;
-            default:cout<<"There is no such a option!";
+            default:cerr<<"There is no such a option!"<<endl;
                 break;
         }
     }

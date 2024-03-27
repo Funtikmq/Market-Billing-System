@@ -19,7 +19,7 @@ public:
     double getPrice();
     int getQuantity();
     void printBill();
-    void addItem(Bill b);
+    void addItem(Bill *b);
     void clearScreen();
 };
 
